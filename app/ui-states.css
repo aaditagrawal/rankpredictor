@@ -1,3 +1,4 @@
+/* The disclaimer action overrides the default button hover color, as the former class merge did. */
 @layer stylex {
   :where(.rank-HowItWorksDropdown55 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
@@ -393,7 +394,7 @@
 }
 @layer ui-states {
   @media (hover: hover) {
-    .rank-button122:hover {
+    .rank-button122:where(:not(.rank-met25)):hover {
       background-color: var(--primary);
     }
   }
@@ -401,7 +402,7 @@
 @layer ui-states {
   @media (hover: hover) {
     @supports (color: color-mix(in lab, red, red)) {
-      .rank-button122:hover {
+      .rank-button122:where(:not(.rank-met25)):hover {
         background-color: color-mix(in oklab, var(--primary) 90%, transparent);
       }
     }
