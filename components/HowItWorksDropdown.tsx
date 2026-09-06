@@ -1,3 +1,4 @@
+import { classNames } from "@/app/ui.stylex";
 import { useState } from "react";
 import "katex/dist/katex.min.css";
 import { BlockMath } from "react-katex";
@@ -11,17 +12,17 @@ const HowItWorksDropdown = () => {
   };
 
   return (
-    <div className="content mb-8 max-w-4xl mx-auto">
+    <div className={classNames.HowItWorksDropdown51}>
       <p
-        className="underline cursor-pointer text-center mb-4 text-white hover:text-yellow-500 transition-all"
+        className={classNames.HowItWorksDropdown52}
         onClick={toggleContent}
       >
         How does this work? {isOpen ? "V" : ">"}
       </p>
 
       {isOpen && (
-        <div className="bg-gray-900 rounded-lg p-6  text-white">
-          <p className="mb-4">
+        <div className={classNames.HowItWorksDropdown53}>
+          <p className={classNames.HowItWorksDropdown54}>
             In MET 2025, both entrance exam scores and board exam results are
             considered. To account for varying difficulty levels across
             different boards, board percentages are normalized into band scores
@@ -31,7 +32,7 @@ const HowItWorksDropdown = () => {
             bands:
           </p>
 
-          <ul className="list-disc list-inside text-left mb-4 space-y-1">
+          <ul className={classNames.HowItWorksDropdown55}>
             <li>95-100%: Band 10</li>
             <li>90-94.99%: Band 9</li>
             <li>85-89.99%: Band 8</li>
@@ -41,15 +42,15 @@ const HowItWorksDropdown = () => {
             <li>Below 50%: Not qualified for MET</li>
           </ul>
 
-          <p className="mb-4">
+          <p className={classNames.HowItWorksDropdown54}>
             Your final band score is calculated using the following formula:
           </p>
 
-          <div className="text-center mb-4 bg-gray-800 p-4 rounded">
+          <div className={classNames.HowItWorksDropdown56}>
             <BlockMath math="\frac{\left( \frac{M}{240} \times 100 \right) + \left( \frac{B}{10} \times 100 \right)}{2}" />
           </div>
 
-          <p className="mb-4">
+          <p className={classNames.HowItWorksDropdown54}>
             Where M is your MET score (out of 240), and B is your board band
             (0-10).
             <br />
@@ -58,11 +59,11 @@ const HowItWorksDropdown = () => {
             ensure accuracy.
           </p>
 
-          <p className="mb-4">
+          <p className={classNames.HowItWorksDropdown54}>
             Using a mathematical concept called{" "}
             <a
               href="https://www.youtube.com/watch?v=MnEa_xHm1j8"
-              className="underline hover:text-yellow-500 text-blue-400"
+              className={classNames.HowItWorksDropdown57}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -71,34 +72,34 @@ const HowItWorksDropdown = () => {
             , we can find the ranks for values of various band scores.
           </p>
 
-          <div className="mb-8">
-            <h3 className="text-2xl font-semibold mb-4">
+          <div className={classNames.HowItWorksDropdown58}>
+            <h3 className={classNames.HowItWorksDropdown59}>
               FAQs for the Rank Predictor
             </h3>
-            <div className="space-y-6 text-base leading-relaxed">
+            <div className={classNames.HowItWorksDropdown60}>
               <div>
-                <p className="font-semibold text-lg mb-2">
+                <p className={classNames.HowItWorksDropdown61}>
                   Q: How accurate is it?
                 </p>
-                <p className="mb-2">
-                  <span className="font-semibold">A:</span> The predictions are
+                <p className={classNames.HowItWorksDropdown62}>
+                  <span className={classNames.HowItWorksDropdown63}>A:</span> The predictions are
                   based on last year&rsquo;s data. So, if someone got the same
                   MET marks and board percentage as you last year, they
                   would&rsquo;ve received the same predicted rank.
                 </p>
-                <ul className="list-disc list-inside ml-4 mt-2 mb-2 text-gray-300 space-y-1">
+                <ul className={classNames.HowItWorksDropdown64}>
                   <li>
                     For the MET 2025 Rank Predictor, Due to merging of the CS branches and other factors
                     the average error was{" "}
-                    <span className="font-semibold text-yellow-300">+25%</span>{" "}
+                    <span className={classNames.HowItWorksDropdown65}>+25%</span>{" "}
                     (meaning the predictor showed a lower rank than people
                     actually got).
                   </li>
                 </ul>
-                <p className="font-semibold mt-2 mb-2">
+                <p className={classNames.HowItWorksDropdown66}>
                   Possible sources of inaccuracy:
                 </p>
-                <ul className="list-disc list-inside ml-4 text-gray-300 space-y-1">
+                <ul className={classNames.HowItWorksDropdown67}>
                   <li>
                     If the difficulty of the MET paper changes significantly
                     compared to last year.

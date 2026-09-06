@@ -1,3 +1,4 @@
+import { classNames } from "@/app/ui.stylex";
 interface CycleSelectProps {
   isOpen: boolean;
   sendCycle: (cycle: number) => void;
@@ -10,19 +11,19 @@ const CycleSelect = ({
   selectedCycle,
 }: CycleSelectProps) => {
   const getClasses = (cycleNum: number) =>
-    `hover:bg-gray-600 cursor-pointer transition-all hover:rounded-md hover:-translate-y-1 p-1 rounded-md ${
-      selectedCycle === cycleNum ? "bg-blue-600 hover:bg-blue-500" : ""
+    ` ${classNames.CycleSelect81} ${
+      selectedCycle === cycleNum ? classNames.CourseList75 : ""
     }`;
 
   return (
     <div
-      className={`flex justify-center gap-4 bg-gray-700 mx-auto w-full overflow-hidden rounded-2xl border border-white/40 transition-all duration-500 shadow-lg ${
+      className={` ${classNames.CycleSelect84} ${
         isOpen
-          ? "max-h-20 opacity-100 mt-2 mb-5 p-3"
-          : "max-h-0 opacity-0 mt-0 mb-0 pointer-events-none p-0"
+          ? classNames.CycleSelect82
+          : classNames.CycleSelect83
       }`}
     >
-      <div className="flex flex-row justify-evenly w-full my-auto">
+      <div className={classNames.CycleSelect85}>
         <div
           onClick={() => sendCycle(0)} // Physics Cycle = 0
           className={getClasses(0)}

@@ -1,3 +1,4 @@
+import { classNames } from "@/app/ui.stylex";
 import Image from "next/image";
 
 interface SemButtonProps {
@@ -9,7 +10,7 @@ interface SemButtonProps {
 const SemButton = ({ isOpen, selectedSemester, onClick }: SemButtonProps) => {
   return (
     <button
-      className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 border border-gray-700 rounded-lg transition-all cursor-pointer mb-4 shadow-md hover:shadow-lg"
+      className={classNames.SemButton110}
       onClick={onClick}
     >
       <span>
@@ -17,8 +18,8 @@ const SemButton = ({ isOpen, selectedSemester, onClick }: SemButtonProps) => {
       </span>
       <span
         id="dropdown-arrow"
-        className={`inline-block ml-2 transform transition-all duration-300 ${
-          isOpen ? "rotate-180" : "rotate-0"
+        className={` ${classNames.SemButton113} ${
+          isOpen ? classNames.SemButton111 : classNames.SemButton112
         }`}
       >
         <Image

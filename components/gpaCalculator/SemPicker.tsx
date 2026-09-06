@@ -1,3 +1,4 @@
+import { classNames } from "@/app/ui.stylex";
 interface SemSelector {
   isOpen: boolean;
   sendSemester: (sem: number) => void;
@@ -6,8 +7,8 @@ interface SemSelector {
 
 const SemPicker = ({ isOpen, sendSemester, selectedSemester }: SemSelector) => {
   const getClasses = (semNum: number) =>
-    `p-3 hover:-translate-y-1 hover:bg-gray-600 cursor-pointer transition-all rounded-md ${
-      selectedSemester === semNum ? "bg-blue-600 hover:bg-blue-500" : ""
+    ` ${classNames.SemPicker114} ${
+      selectedSemester === semNum ? classNames.CourseList75 : ""
     }`;
 
   return (
@@ -15,11 +16,11 @@ const SemPicker = ({ isOpen, sendSemester, selectedSemester }: SemSelector) => {
       id="semester"
       className={`${
         isOpen
-          ? "max-h-96 opacity-100 mt-2 mb-4"
-          : "pointer-events-none mt-0 mb-0 max-h-0 opacity-0"
-      } overflow-hidden flex justify-center items-center w-72 bg-gray-700 mx-auto border border-white/40 rounded-xl p-3 transition-all duration-500 shadow-lg`}
+          ? classNames.SemPicker115
+          : classNames.SemPicker116
+      } ${classNames.SemPicker117} `}
     >
-      <div className="grid grid-cols-4 grid-rows-2 gap-3 text-center w-full">
+      <div className={classNames.SemPicker118}>
         <span onClick={() => sendSemester(1)} className={getClasses(1)}>
           I
         </span>

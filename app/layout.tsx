@@ -1,3 +1,4 @@
+import { classNames } from "@/app/ui.stylex";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -83,7 +84,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[#06070a] text-white font-mono">
+      <body className={classNames.layout3}>
         <GoogleAnalytics gaId="G-NQYHBHJ3MX" />
         <NavBar />
         {children}

@@ -1,3 +1,4 @@
+import { classNames } from "@/app/ui.stylex";
 import { useState } from "react";
 
 interface Branch {
@@ -29,8 +30,8 @@ const BranchesDisplay = ({ attainableBranches }: BranchesDisplayProps) => {
 
   if (attainableBranches.length === 0) {
     return (
-      <div className="mt-4 rounded-xl border border-red-500/40 bg-red-950/70 p-4 text-center text-red-100">
-        <p className="text-sm sm:text-base">
+      <div className={classNames.BranchesDisplay37}>
+        <p className={classNames.BranchesDisplay38}>
           No branches available at your predicted rank. Better luck next time!
         </p>
       </div>
@@ -38,9 +39,9 @@ const BranchesDisplay = ({ attainableBranches }: BranchesDisplayProps) => {
   }
 
   return (
-    <section className="mt-4">
-      <div className="mb-3 flex items-center justify-between gap-3">
-        <h2 className="text-lg font-semibold text-slate-100 sm:text-xl">
+    <section className={classNames.BranchesDisplay39}>
+      <div className={classNames.BranchesDisplay40}>
+        <h2 className={classNames.BranchesDisplay41}>
           Attainable Branches
         </h2>
       </div>
@@ -48,7 +49,7 @@ const BranchesDisplay = ({ attainableBranches }: BranchesDisplayProps) => {
       {attainableBranches.map((collegeData) => (
         <div
           key={collegeData.college}
-          className="mb-4 overflow-hidden rounded-xl border border-slate-700 bg-slate-900/70"
+          className={classNames.BranchesDisplay42}
         >
           {collegeData.branches.length > 0 && (
             <>
@@ -56,12 +57,12 @@ const BranchesDisplay = ({ attainableBranches }: BranchesDisplayProps) => {
                 onClick={() => toggleCollege(collegeData.college)}
                 aria-expanded={!hiddenColleges.has(collegeData.college)}
                 aria-controls={`branches-${collegeData.college.replace(/\s+/g, "-").toLowerCase()}`}
-                className="campus-btn flex w-full touch-manipulation items-center justify-between gap-3 border-b border-slate-700 bg-emerald-600/90 px-4 py-3 text-left text-white transition-colors hover:bg-emerald-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/70 focus-visible:ring-inset sm:px-5"
+                className={classNames.BranchesDisplay43}
               >
-                <span className="text-base font-semibold sm:text-lg">
+                <span className={classNames.BranchesDisplay44}>
                   {collegeData.college}
                 </span>
-                <span className="rounded-full bg-black/20 px-2 py-1 text-xs font-medium sm:text-sm">
+                <span className={classNames.BranchesDisplay45}>
                   {collegeData.branches.length} branches
                 </span>
               </button>
@@ -69,18 +70,18 @@ const BranchesDisplay = ({ attainableBranches }: BranchesDisplayProps) => {
               {!hiddenColleges.has(collegeData.college) && (
                 <div
                   id={`branches-${collegeData.college.replace(/\s+/g, "-").toLowerCase()}`}
-                  className="campus-content p-3 sm:p-4"
+                  className={classNames.BranchesDisplay46}
                 >
-                  <ul className="grid gap-2 sm:grid-cols-2">
+                  <ul className={classNames.BranchesDisplay47}>
                     {collegeData.branches.map((branch, index) => (
                       <li
                         key={index}
-                        className="flex items-start justify-between gap-3 rounded-lg border border-slate-700 bg-slate-800/70 px-3 py-2"
+                        className={classNames.BranchesDisplay48}
                       >
-                        <span className="min-w-0 break-words text-sm text-slate-100 sm:text-base">
+                        <span className={classNames.BranchesDisplay49}>
                           {branch.name}
                         </span>
-                        <span className="shrink-0 rounded-md bg-slate-700 px-2 py-1 text-xs font-semibold tabular-nums text-amber-300 sm:text-sm">
+                        <span className={classNames.BranchesDisplay50}>
                           {branch.cutoff}
                         </span>
                       </li>

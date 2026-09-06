@@ -1,3 +1,4 @@
+import { classNames } from "@/app/ui.stylex";
 import { useState, useEffect, type JSX } from "react";
 import subjectData from "../../utils/subjects";
 
@@ -78,7 +79,7 @@ const GpaTable = ({ isOpen, honors, subjectGroup }: GpaTableProps) => {
       const isAlternate = idx % 2 === 0;
 
       returnElements.push(
-        <tr className={isAlternate ? "bg-zinc-900" : ""} key={subjectName}>
+        <tr className={isAlternate ? classNames.GpaTable86 : ""} key={subjectName}>
           <td>{subjectName}</td>
           <td id={`credits-${idx}`}>{creditValue}</td>
           <td>
@@ -110,34 +111,34 @@ const GpaTable = ({ isOpen, honors, subjectGroup }: GpaTableProps) => {
   return (
     <div>
       <div
-        className={`flex shrink justify-center text-center drop-shadow-xl transition-all duration-500 mb-6 ${!isOpen ? "opacity-0" : "opacity-100"} `}
+        className={` ${classNames.GpaTable89} ${!isOpen ? classNames.GpaTable87 : classNames.GpaTable88} `}
       >
         <table
-          className={`table-auto border-collapse drop-shadow-xl transition-all duration-500 ${!isOpen ? "opacity-0" : "opacity-100"}`}
+          className={` ${classNames.GpaTable90} ${!isOpen ? classNames.GpaTable87 : classNames.GpaTable88}`}
         >
           <thead>
-            <tr className="bg-zinc-900 py-10">
+            <tr className={classNames.GpaTable91}>
               <th>Subject</th>
               <th>Credits</th>
               <th>Grade(/A+)</th>
             </tr>
           </thead>
-          <tbody id="subject_table" className="opacity-100">
+          <tbody id="subject_table" className={classNames.GpaTable88}>
             {isOpen ? returnSubjects(subjects) : null}
           </tbody>
         </table>
       </div>
       <div
-        className={`transition-all duration-500 ${!isOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+        className={` ${classNames.GpaTable93} ${!isOpen ? classNames.GpaTable92 : classNames.GpaTable88}`}
       >
         <button
           onClick={calculateGPA}
-          className="w-full py-2 px-4 bg-green-600 text-white rounded-lg hover:bg-green-500 active:bg-green-700 cursor-pointer transition-colors mb-4"
+          className={classNames.GpaTable94}
         >
           Submit Grades
         </button>
       </div>
-      <div className={`${gpa === null || !isOpen ? "hidden" : ""}`}>
+      <div className={`${gpa === null || !isOpen ? classNames.GpaTable95 : ""}`}>
         Your GPA is Calculated to be: {gpa}
       </div>
     </div>

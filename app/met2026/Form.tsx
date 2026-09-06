@@ -1,4 +1,7 @@
 "use client";
+
+import { classNames } from "@/app/ui.stylex";
+
 import { useState } from "react";
 import { predictMETRank, PredictionResult } from "../../utils/metPrediction";
 import BranchesDisplay from "../../components/BranchesDisplay";
@@ -85,20 +88,20 @@ const Form = ({ sendBoards, sendMET }: FormProp) => {
   };
 
   return (
-    <div className="mt-6">
-      <div className="mx-auto w-full max-w-5xl rounded-2xl border border-slate-700/70 bg-slate-900/70 p-5 shadow-xl backdrop-blur-sm sm:p-6">
-        <h1 className="mb-2 text-center text-2xl font-semibold tracking-tight text-slate-100 sm:text-3xl">
+    <div className={classNames.Form4}>
+      <div className={classNames.Form5}>
+        <h1 className={classNames.Form6}>
           MET 2026 Rank Predictor
         </h1>
-        <p className="mb-6 text-center text-sm text-slate-400 sm:text-base">
+        <p className={classNames.Form7}>
           Enter your scores to estimate your rank and view likely branches.
         </p>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className={classNames.Form8}>
           <div>
             <label
               htmlFor="boardPercentage"
-              className="mb-2 block text-sm font-medium text-slate-200"
+              className={classNames.Form9}
             >
               Board Percentage
             </label>
@@ -116,14 +119,14 @@ const Form = ({ sendBoards, sendMET }: FormProp) => {
                 const val = e.target.value;
                 handleBoardChange(val === "" ? null : Number(val));
               }}
-              className="w-full rounded-lg border border-slate-600 bg-slate-800 px-4 py-3 text-lg text-slate-100 shadow-inner transition-colors focus-visible:border-emerald-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/40"
+              className={classNames.Form10}
             />
           </div>
 
           <div>
             <label
               htmlFor="metMarks"
-              className="mb-2 block text-sm font-medium text-slate-200"
+              className={classNames.Form9}
             >
               MET Marks (out of 240)
             </label>
@@ -140,7 +143,7 @@ const Form = ({ sendBoards, sendMET }: FormProp) => {
                 const val = e.target.value;
                 handleMetChange(val === "" ? null : Number(val));
               }}
-              className="w-full rounded-lg border border-slate-600 bg-slate-800 px-4 py-3 text-lg text-slate-100 shadow-inner transition-colors focus-visible:border-emerald-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/40"
+              className={classNames.Form10}
             />
           </div>
         </div>
@@ -148,27 +151,27 @@ const Form = ({ sendBoards, sendMET }: FormProp) => {
         <button
           onClick={handlePredict}
           disabled={isLoading || boardPercentage === null || metMarks === null}
-          className="mt-5 w-full touch-manipulation rounded-lg bg-emerald-600 px-4 py-3 text-base font-semibold text-white transition-colors hover:bg-emerald-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 active:bg-emerald-700 disabled:cursor-not-allowed disabled:bg-slate-600 sm:text-lg"
+          className={classNames.Form11}
         >
           {isLoading ? "Predicting..." : "Predict Rank"}
         </button>
 
         {error && (
-          <div className="mt-4 rounded-lg border border-red-500/40 bg-red-950/60 p-3 text-sm text-red-100">
+          <div className={classNames.Form12}>
             {error}
           </div>
         )}
 
         {prediction && (
-          <div className="mt-6 space-y-4">
-            <div className="rounded-xl border border-slate-700 bg-slate-800/70 p-4 sm:p-5">
-              <p className="text-center text-lg text-slate-100 sm:text-xl">
+          <div className={classNames.Form13}>
+            <div className={classNames.Form14}>
+              <p className={classNames.Form15}>
                 Your rank according to last year:
-                <span className="ml-2 font-bold tabular-nums text-amber-300">
+                <span className={classNames.Form16}>
                   {prediction.predictedRank}
                 </span>
               </p>
-              <p className="mt-2 text-center text-xs text-slate-400 sm:text-sm">
+              <p className={classNames.Form17}>
                 Note: CPS, Biomedical, VLSI will be merged into EEE for 2026.
               </p>
             </div>
@@ -179,8 +182,8 @@ const Form = ({ sendBoards, sendMET }: FormProp) => {
           </div>
         )}
       </div>
-                <p className="font-semibold text-s mt-10 mb-2 text-center text-white">
-                  Special thanks to <a href="https://pranavu.dev/" target="_blank" rel="noopener noreferrer" className="text-yellow-400 hover:text-yellow-300 transition-all">Pranav U</a> for processing and cleaning the data, and for their help in building the predictor!
+                <p className={classNames.Form18}>
+                  Special thanks to <a href="https://pranavu.dev/" target="_blank" rel="noopener noreferrer" className={classNames.Form19}>Pranav U</a> for processing and cleaning the data, and for their help in building the predictor!
                 </p>
     </div>
   );

@@ -1,3 +1,4 @@
+import { classNames } from "@/app/ui.stylex";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -32,10 +33,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div>
-      <div className="max-w px-10 md:px-30 text-justify space-y-8 mb-18 mt-8">
-        <section className="space-y-2">
-          <h2 className="text-2xl font-bold">About</h2>
-          <p className="text-gray-300">
+      <div className={classNames.home30}>
+        <section className={classNames.home31}>
+          <h2 className={classNames.home32}>About</h2>
+          <p className={classNames.home33}>
             After encountering numerous &ldquo;rank predictors&rdquo; on the
             internet that ask for your marks along with personal data like your
             phone number and name—only to farm and sell this information, as
@@ -47,22 +48,22 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="space-y-2">
-          <h2 className="text-2xl font-bold">Our Track Record</h2>
-          <p className="text-gray-300">
+        <section className={classNames.home31}>
+          <h2 className={classNames.home32}>Our Track Record</h2>
+          <p className={classNames.home33}>
             We have a proven history of providing reliable predictions. To date,
             we have delivered rank predictors for:
           </p>
-          <ul className="list-disc list-inside text-gray-300 ml-4">
+          <ul className={classNames.home34}>
             <li>KCET 2024</li>
             <li>MET 2024</li>
             <li>MET 2025</li>
           </ul>
         </section>
 
-        <section className="space-y-2">
-          <h2 className="text-2xl font-bold">Our Methodology</h2>
-          <p className="text-gray-300">
+        <section className={classNames.home31}>
+          <h2 className={classNames.home32}>Our Methodology</h2>
+          <p className={classNames.home33}>
             We gather verified and accurate data from past exam results to
             ensure our predictions are reliable. Using various mathematical
             methods, such as polynomial regression, we aim to provide the most
@@ -74,15 +75,15 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="space-y-2">
-          <h2 className="text-2xl font-bold">Contact and License</h2>
-          <p className="text-gray-300">
+        <section className={classNames.home31}>
+          <h2 className={classNames.home32}>Contact and License</h2>
+          <p className={classNames.home33}>
             You can reach out to us on Discord for any further queries. You can
             DM{" "}
             <a
               href="https://discord.com/users/180399116327714816"
               target="_blank"
-              className="text-white hover:text-yellow-500 transition-all"
+              className={classNames.home35}
             >
               @pixelhalide
             </a>{" "}
@@ -91,12 +92,12 @@ export default function Home() {
             <a
               href="https://discord.gg/2mYN8aDPur"
               target="_blank"
-              className="text-yellow-500 hover:text-yellow-600 transition-all"
+              className={classNames.home36}
             >
               MIT Manipal & MET Discord
             </a>
           </p>
-          <p className="text-gray-300">
+          <p className={classNames.home33}>
             All our code and data are open-source under the GPL-3 license,
             allowing you to freely use, modify, and share them, provided that
             derivative works are also shared under the same license terms.

@@ -1,3 +1,4 @@
+import { classNames } from "@/app/ui.stylex";
 interface CourseListProps {
   isOpen: boolean;
   sendCourse: (course: string) => void;
@@ -10,19 +11,19 @@ const CourseList = ({
   selectedCourse,
 }: CourseListProps) => {
   const getClasses = (courseCode: string) =>
-    `p-2 hover:-translate-y-1 hover:bg-gray-600 cursor-pointer transition-all rounded-md text-sm ${
-      selectedCourse === courseCode ? "bg-blue-600 hover:bg-blue-500" : ""
+    ` ${classNames.CourseList76} ${
+      selectedCourse === courseCode ? classNames.CourseList75 : ""
     }`;
 
   return (
     <div
-      className={`overflow-hidden flex justify-center items-center w-full bg-gray-700 mx-auto border border-white/40 rounded-xl transition-all duration-500 shadow-lg ${
+      className={` ${classNames.CourseList79} ${
         !isOpen
-          ? "pointer-events-none max-h-0 opacity-0 p-0"
-          : "max-h-96 opacity-100 mb-5 p-4"
+          ? classNames.CourseList77
+          : classNames.CourseList78
       }`}
     >
-      <div className="grid grid-cols-3 grid-rows-7 gap-3 text-center w-full">
+      <div className={classNames.CourseList80}>
         <span onClick={() => sendCourse("CS")} className={getClasses("CS")}>
           CSE
         </span>

@@ -1,5 +1,8 @@
 "use client";
 
+import { classNames } from "@/app/ui.stylex";
+
+
 import { useState } from "react";
 import SemButton from "../../components/gpaCalculator/SemButton";
 import SemPicker from "../../components/gpaCalculator/SemPicker";
@@ -77,10 +80,10 @@ const GpaCalc = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className={classNames.gpa0}>
       <GradingInfoDropdown />
-      <div className="bg-gray-800 rounded-lg p-6 shadow-lg max-w-xl w-full text-center">
-        <label className="block mb-2">Select your Semester:</label>
+      <div className={classNames.gpa1}>
+        <label className={classNames.gpa2}>Select your Semester:</label>
         <SemButton isOpen={semester_dropdown_open} onClick={semClick} />
         <SemPicker
           isOpen={semester_dropdown_open}

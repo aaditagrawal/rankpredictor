@@ -1,4 +1,7 @@
 "use client";
+
+import { classNames } from "@/app/ui.stylex";
+
 import { useEffect, useState } from "react";
 import HowItWorksDropdown from "../../components/HowItWorksDropdown";
 import { Button } from "@/components/ui/button";
@@ -51,22 +54,22 @@ const MET2026 = () => {
       >
         <DialogContent
           showCloseButton={false}
-          className="border-slate-700 bg-slate-900 text-slate-100 data-[state=closed]:slide-out-to-bottom-8 data-[state=open]:slide-in-from-bottom-8 sm:max-w-xl"
+          className={classNames.met20}
         >
           <DialogHeader>
-            <DialogTitle className="text-xl text-amber-300">
+            <DialogTitle className={classNames.met21}>
               Prediction Disclaimer
             </DialogTitle>
-            <DialogDescription className="space-y-3 text-sm leading-relaxed text-slate-300">
-              <span className="block">
+            <DialogDescription className={classNames.met22}>
+              <span className={classNames.met23}>
                 This tool provides an estimated rank based on previous data and
                 trends. It is only a prediction and cannot be 100% accurate.
               </span>
-              <span className="block">
+              <span className={classNames.met23}>
                 Final outcomes can differ due to changes in exam difficulty,
                 normalization, cutoffs, and counseling decisions.
               </span>
-              <span className="block font-medium text-slate-200">
+              <span className={classNames.met24}>
                 By continuing, you acknowledge this is informational only, and
                 I am not liable for decisions made based on this prediction.
               </span>
@@ -75,7 +78,7 @@ const MET2026 = () => {
           <DialogFooter>
             <Button
               onClick={handleDisclaimerClose}
-              className="w-full bg-emerald-600 text-white hover:bg-emerald-500 sm:w-auto"
+              className={classNames.met25}
             >
               I Understand, Continue
             </Button>
@@ -83,10 +86,10 @@ const MET2026 = () => {
         </DialogContent>
       </Dialog>
 
-      <div className="min-h-screen overflow-x-hidden bg-[#06070a] px-4 py-8 sm:px-6 lg:px-10">
-        <div className="mx-auto w-full max-w-6xl">
-          <Card className="rounded-3xl border-slate-700/60 bg-linear-to-b from-slate-900 via-slate-900 to-slate-950 shadow-[0_20px_80px_rgba(2,6,23,0.6)]">
-            <CardContent className="p-4 sm:p-6">
+      <div className={classNames.met26}>
+        <div className={classNames.met27}>
+          <Card className={classNames.met28}>
+            <CardContent className={classNames.met29}>
               <HowItWorksDropdown />
               <Form sendBoards={() => {}} sendMET={() => {}} />
             </CardContent>
